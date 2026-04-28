@@ -38,7 +38,8 @@ def escape_format_instance_list(urls):
     for url in urls:
         parsed = urlparse(url)
         # Reconstruct URL with masked credentials
-        if parsed.username or parsed.password:
+        # Check if credentials are present (username/password not None)
+        if parsed.username is not None or parsed.password is not None:
             netloc = f"***:***@{parsed.hostname}"
         else:
             netloc = parsed.hostname
