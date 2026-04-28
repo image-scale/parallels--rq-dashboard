@@ -1,0 +1,5 @@
+rq>=1.0
+Flask
+redis
+arrow
+redis-sentinel-url
